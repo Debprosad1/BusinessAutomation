@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessAutomation.Database\BusinessAutomation.Database.csproj" />
+    <ProjectReference Include="..\BusinessAutomation.Models\BusinessAutomation.Models.csproj" />
+    <ProjectReference Include="..\BusinessAutomation.Repositories.Abstractions\BusinessAutomation.Repositories.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

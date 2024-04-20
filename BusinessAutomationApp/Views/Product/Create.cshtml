@@ -1,0 +1,26 @@
+﻿@model ProductCreateVM
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" asp-for="Name" placeholder="Name...">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea type="text" class="form-control" asp-for="Description" placeholder="Descripton..."></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="SalesPrice">Sales Price</label>
+        <input type="text" class="form-control" asp-for="SalesPrice" placeholder="Sales Price...">
+        <span asp-validation-for="SalesPrice"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</form>

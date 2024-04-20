@@ -1,0 +1,42 @@
+﻿
+@model CustomerList
+
+@{
+    int slNo = 0;
+    //var customerList = (List<CustomerCreate>)ViewBag.CustomerList;
+}
+
+<div class="card">
+    <div class="card-header">
+        @Model.Company.Name
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Company.Name</h5>
+        <p class="card-text">ID: @Model.Company.CompanyId</p>
+        <p class="card-text">Location: @Model.Company.Location</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>@(++slNo)</td>
+                <td>@customer.Name</td>
+                <td>@customer.Phone</td>
+                <td>@customer.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+﻿@model ProductIndex
+
+@{
+    int slNo = 0;
+}
+
+<form class="form-inline">
+    <div class="form-group mb-2">
+        <input type="text" class="form-control" asp-for="SearchKey" placeholder="Search...">
+    </div>
+    <button type="submit" class="btn btn-warning mb-2">Search</button>
+</form>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Sale Price</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.ProductList != null)
+        {
+            @foreach (var productItem in Model.ProductList)
+            {
+                <tr>
+                    <td>@(++slNo)</td>
+                    <td>@productItem.Name</td>
+                    <td>@productItem.Description</td>
+                    <td>@productItem.SalesPrice</td>
+                    <td>View | <a asp-action="Edit" asp-route-id="@productItem.Id">Edit</a>  | Remove</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="5">No Data Found.</td></tr>
+        }
+
+    </tbody>
+</table>
